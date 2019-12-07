@@ -7,17 +7,20 @@ These adjustments are to make [Lord of the Test](https://github.com/minetest-LOT
 On install of LotT, beds didn't let you sleep and required tools to break.  Minetest's beds were functioning properly.
 ### Fix
 1. Copy the `beds` directory from the `games/minetest-game/mods` directory. (This gets the beds API and functions.)
-2. Run `perl -p -i -e "s/bed_(top|bottom)_(red|green|blue)/bed_\2_\1/g" <filename_here>` for each `.we` file in the `games/Lord-of-the-Test-1.1.0/mods/lottmapgen/schems` directory.
+2. Run `perl -p -i -e "s/bed_(top|bottom)_(red|green|blue)/bed_\2_\1/g" <filename_here>` for each `.we` file in the `games/Lord-of-the-Test-1.1.0/mods/lottmapgen/schems` directory. (This makes the building generation recognise the correct blocks because the API defines the blocks with top and bottom at the end instead of before the colours.)
 3. Replace `games/Lord-of-the-Test-1.1.0/mods/lottblocks/beds.lua`. (This replaces the non-functioning bed blocks.)
 4. Add `beds` to `games/Lord-of-the-Test-1.1.0/mods/lottblocks/mod.conf`. (This ensures the code is imported.)
 ### Result
-Beds work and break properly.  The beds aren't as pretty as the original LotT beds (the sides are slabs rather than legs), but they work and have colours.
+Beds work and break properly.  The beds aren't as pretty as the original LotT beds (the sides are slabs rather than legs), but they work and have colours.  The default beds are included.
 
-TODO: Correct craft recipes for coloured beds.
+### TODO
+* Correct craft recipes for coloured beds.
+* Ensure coloured beds are produced (default bed uses `group:wool`, coloured beds use `wool:<colour>`).
 
 ---
 ## Torches
 ### Problem
 Wall mount torches don't look like torches (just two dots of light).
 
-TODO: Develop fix.
+### TODO
+* Develop fix.
