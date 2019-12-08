@@ -40,4 +40,9 @@ Torches look like torches.  Colours are applied over the entire animation (the E
 One mob's (fireball-throwing thing in caverns) avatar occupies space from surface+1m to surface+3m; its selection box occupies space from surface to surface+2m.
 
 ### TODO
-Let someone else fix it.
+* Let someone else fix it.
+
+***
+## Overall
+### TODO
+* Develop scripts to copy files, add lines, &c..
